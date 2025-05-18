@@ -10,7 +10,7 @@ public:
     void smoothWrite(int value, int delay = -1);
 
 private:
-    int customDelay;
+    int customDelay{};
 };
 
 #endif
