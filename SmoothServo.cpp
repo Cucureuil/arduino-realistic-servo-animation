@@ -20,16 +20,7 @@ void SmoothServo::smoothWrite(int value, int delay)
     {
         if (millis() - startTime > delayToApply)
         {
-            if (i < value)
-            {
-                i++;
-            }
-            else
-            {
-                i--;
-            }
-
-            Serial.println(i);
+            i += i < value ? 1 : -1;
 
             this->write(i);
             startTime = millis();
