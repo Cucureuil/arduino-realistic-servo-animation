@@ -1,9 +1,8 @@
 #include "SmoothServo.h"
 #include <Arduino.h>
 
-SmoothServo::SmoothServo(int delay) : Servo()
+SmoothServo::SmoothServo(int delay) : Servo{}, customDelay{delay}
 {
-    customDelay = delay;
 }
 
 void SmoothServo::smoothWrite(int value, int delay)
